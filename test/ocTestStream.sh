@@ -14,7 +14,6 @@ fi
 
 # Make the destination optional and point to localhost with default key
 if [[ ${@: -1} == *"rtmp://"* ]]; then
-  echo "RTMP is specified"
   DESTINATION_HOST=${@: -1}
   array=( $@ )
   ARGS_LEN=${#array[@]}

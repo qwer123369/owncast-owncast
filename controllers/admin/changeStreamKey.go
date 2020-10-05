@@ -26,6 +26,7 @@ func ChangeStreamKey(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	log.Traceln("Changing key from ", config.Config.VideoSettings.StreamingKey, "to", request.Key)
 	config.Config.VideoSettings.StreamingKey = request.Key
 	controllers.WriteSimpleResponse(w, true, "changed")
 }
